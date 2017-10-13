@@ -7,9 +7,6 @@ python:
 install:
   - pip install -r requirements-test.txt
 
-before_script:
-  - export BRANCH=$(if [ "$TRAVIS_BRANCH" == "master" ] || [ "$TRAVIS_BRANCH" == "develop"]; then echo $TRAVIS_BRANCH; else echo "feature_test"; fi)
-
 script:
   - nosetests
 
@@ -17,6 +14,7 @@ services:
   - docker
 
 before_install:
+  - export BRANCH=$(if [ "$TRAVIS_BRANCH" == "master" ] || [ "$TRAVIS_BRANCH" == "develop"]; then echo $TRAVIS_BRANCH; else echo "feature_test"; fi)
   - docker build master/ -t "master:$BRANCH"
   - docker build minion/ -t "minion:$BRANCH"
   - docker run -d --name "master" master:$BRANCH 
