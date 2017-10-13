@@ -1,5 +1,13 @@
 # Salt Docker
 
-Work in progress configuration for spawning a salt-master and salt-minion using Docker, aimed at testing local salt states.
+### Build Status
+**Master** 
 
-Currently running Salt 2016.11.x.
+[![Master](https://travis-ci.org/mtslzr/salt-docker.svg?branch=master)](https://travis-ci.org/mtslzr/salt-docker)
+
+**Develop** 
+
+[![Develop](https://travis-ci.org/mtslzr/salt-docker.svg?branch=develop)](https://travis-ci.org/mtslzr/salt-docker)
+
+### Description
+Work in progress configuration for spawning a salt-master and salt-minion using Docker, aimed at testing local salt states.
